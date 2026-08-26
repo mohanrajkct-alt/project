@@ -13,19 +13,18 @@ test('POM', async ({ page }) => {
     const home = new firstPage(page);
     await home.Website();
     await home.Login('mohanrajramya07@gmail.com', 'Mohan@7700')
-    await page.waitForTimeout(3000)
+    
 
     // Product Page
 
     const product = new ProductPage(page)
     await product.viewProductDetails();
     await product.addToCart();
-    await page.waitForTimeout(5000)
+    
 
     // Cart Page
     const cart = new CartPage(page)
     await cart.openCart();
-    await page.waitForTimeout(5000)
     await cart.clickCheckout();
 
     // Checkout Page
