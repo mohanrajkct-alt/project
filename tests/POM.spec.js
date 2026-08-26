@@ -7,21 +7,20 @@ import { CheckoutPage } from '../MyTest/CheckoutPage';
 
 
 
-test('POM', async ({page})=>{
+test('POM', async ({ page }) => {
 
-// first 
+    // first 
     const home = new firstPage(page);
     await home.Website();
-    await home.Login('mohanrajramya07@gmail.com','Mohan@7700')
+    await home.Login('mohanrajramya07@gmail.com', 'Mohan@7700')
     await page.waitForTimeout(3000)
-
 
     // Product Page
 
     const product = new ProductPage(page)
     await product.viewProductDetails();
     await product.addToCart();
- await page.waitForTimeout(5000)
+    await page.waitForTimeout(5000)
 
     // Cart Page
     const cart = new CartPage(page)
@@ -29,12 +28,10 @@ test('POM', async ({page})=>{
     await page.waitForTimeout(5000)
     await cart.clickCheckout();
 
-
     // Checkout Page
 
     const checkout = new CheckoutPage(page)
     await checkout.placeOrder();
-    await checkout.payment('Mohanraj','4111111111111111','123','12','2029');
-     await page.waitForTimeout(5000)
+    await checkout.payment('Mohanraj', '4111111111111111', '123', '12', '2029');
 
 });

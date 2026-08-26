@@ -22,8 +22,8 @@ import{test,expect}from '@playwright/test'
 test('MouseHover',async({page})=>{
 
 await page.goto('https://www.amazon.in/')
-// const list=await page.locator('#nav-link-accountList')
-const prime=await page.locator('//span[text()="Prime"]')
+const list=await page.locator('#nav-link-accountList')
+// const prime=await page.locator('//span[text()="Prime"]')
 // await prime.hover();
 await list.hover();
 await page.waitForTimeout(3000)
